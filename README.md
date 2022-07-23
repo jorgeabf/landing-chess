@@ -1,1 +1,1 @@
-# Layout de Ejemplo Panaderia
+# Landing Page Ajedrez
