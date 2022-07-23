@@ -22,6 +22,7 @@ body {
     --shadow: 0 8px 8px;
     --color_shadow: hsla(0, 0%, 0%, 0.2);
     --border: 2px solid var(--black-3);
+    --gap: 1rem;
 }
 
 button,
@@ -166,16 +167,16 @@ textarea {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: var(--gap);
 }
 
 .card {
-    width: 30%;
+    width: calc(100% / 3 - var(--gap));
     padding: 30px 0;
     overflow: hidden;
     background: linear-gradient(180deg, #30353b 0%, #1a1b1f 100%);
     border-radius: 10px;
     position: relative;
-    margin-bottom: 60px;
     box-shadow: 0 0 6px var(--color_shadow);
     text-align: right;
 }
@@ -232,28 +233,37 @@ textarea {
 }
 
 .container-bg {
-    display: flex;
-    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
-    flex-wrap: wrap;
+    gap: var(--gap);
 }
 
-.background {
-    width: 68%;
-    height: 330px;
+.container-bg>* {
+    width: auto !important;
+}
+
+.card--large {
+    max-height: 330px;
     border-radius: 10px;
     position: relative;
-    margin-bottom: 60px;
 }
 
-.background__img {
+.card--txiki {
+    min-height: 330px;
+}
+
+.card--large__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: inherit;
 }
 
-.background__texto {
+.card--large__texto {
     position: absolute;
     width: 100%;
     bottom: 0;
@@ -264,7 +274,7 @@ textarea {
     border-radius: 0 0 10px 10px;
 }
 
-.background__title {
+.card--large__title {
     font-size: 24px;
     margin-bottom: 4px;
 }
@@ -278,15 +288,15 @@ textarea {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: var(--gap);
 }
 
 .testimonios__card {
-    width: 30%;
+    width: calc(100% / 3 - var(--gap));
     height: 500px;
     background: linear-gradient(180deg, #30353b 0%, #1a1b1f 100%);
     border-radius: 10px;
     position: relative;
-    margin-bottom: 30px;
 }
 
 .testimonios__img {
@@ -455,16 +465,17 @@ textarea {
 
 .download__app {
     display: flex;
+    gap: 1em;
 }
 
 .download__item {
     display: flex;
+    gap: 1em;
     padding: 18px 12px;
     border-radius: 6px;
     border: var(--border);
     align-items: center;
-    margin-right: 20px;
-    margin-bottom: 16px;
+    margin-bottom: 2rem;
 }
 
 .download__logo {
@@ -511,7 +522,8 @@ textarea {
     margin-top: 24px;
     display: flex;
     color: var(--black-3);
-    align-items: center;
+    justify-content: center;
+    align-items: space-evenly;
     gap: 1rem;
 }
 
@@ -530,7 +542,7 @@ textarea {
 
 .contact__item {
     width: 25%;
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -577,16 +589,12 @@ textarea {
         justify-content: space-evenly;
     }
 
-    .servicios .card {
-        width: 45%;
-    }
-
-    .background {
-        width: 52%;
+    .container-bg {
+        grid-template-columns: 1fr 1fr;
     }
 
     .card {
-        width: 42%;
+        width: calc(100% / 2 - var(--gap));
     }
 
     .testimonios-container {
@@ -594,7 +602,7 @@ textarea {
     }
 
     .testimonios__card {
-        width: 45%;
+        width: calc(100% / 2 - var(--gap));
     }
 
     .check__item {
@@ -603,7 +611,7 @@ textarea {
     }
 
     .newsletter {
-        width: 80%;
+        width: 100%;
     }
 
     .download {
@@ -615,16 +623,12 @@ textarea {
     }
 
     .download__item {
-        width: 45%;
+        width: 50%;
     }
 
     .get-email {
         width: 100%;
         margin-bottom: 40px;
-    }
-
-    .socialmedia__icon {
-        font-size: 2em;
     }
 }
 
@@ -694,17 +698,8 @@ textarea {
         text-align: center;
     }
 
-    .servicios .card {
-        width: 80%;
-    }
-
-    .container-bg {
-        justify-content: space-evenly;
-    }
-
     .card {
-        margin-bottom: 40px;
-        width: 65%;
+        width: 100%;
     }
 
     .card__titulo {
@@ -715,13 +710,8 @@ textarea {
         width: 100%;
     }
 
-    .background {
-        width: 65%;
-        margin-bottom: 40px;
-    }
-
     .testimonios__card {
-        width: 75%;
+        width: 100%;
     }
 
     .testimonios__nombre {
@@ -732,9 +722,13 @@ textarea {
         width: 80%;
     }
 
+    .container-bg {
+        grid-template-columns: 1fr;
+    }
+
     .contact__item {
         width: 100%;
-        padding: 30px 0 0;
+        padding: 40px 0 0;
     }
 
     .contact__item:nth-child(3) {
@@ -752,20 +746,12 @@ textarea {
         margin-bottom: 15px;
     }
 
-    .servicios .card {
-        width: 95%;
-    }
-
     .card {
-        width: 95%;
-    }
-
-    .background {
-        width: 95%;
+        width: 100%;
     }
 
     .testimonios__card {
-        width: 95%;
+        width: 100%;
     }
 
     .testimonios__history {
@@ -778,7 +764,7 @@ textarea {
 
     .newsletter {
         width: 100%;
-        display: none;
+
     }
 
     .newsletter--modifier {
@@ -793,7 +779,7 @@ textarea {
     }
 
     .download__item {
-        width: 49%;
+        width: 100%;
     }
 
     .download__title {
