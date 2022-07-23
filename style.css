@@ -12,16 +12,16 @@ body {
 }
 
 :root {
-    --gold1: hsl(34, 85%, 71%);
-    --gold2: hsl(36, 85%, 76%);
-    --gray1: hsla(0, 0%, 100%, 0.502);
-    --gray2: hsla(0, 65%, 91%, 0.565);
-    --black1: hsl(228, 9%, 11%);
-    --black2: hsl(138, 28%, 26%);
-    --black-3: hsl(228, 9%, 31%);
+    --gold1: #f4bd76;
+    --gold2: #f6cc8e;
+    --gray1: #ffffff80;
+    --gray2: #f7d9d990;
+    --black1: #1a1b1f;
+    --black2: #30553b;
+    --gray3: #484b56;
     --shadow: 0 8px 8px;
-    --color_shadow: hsla(0, 0%, 0%, 0.2);
-    --border: 2px solid var(--black-3);
+    --color_shadow: #00000033;
+    --border: 2px solid var(--gray3);
     --gap: 1rem;
 }
 
@@ -99,9 +99,7 @@ textarea {
 }
 
 .mockup {
-    object-fit: cover;
-    width: 48%;
-    max-height: 90vh;
+    width: 50%;
 }
 
 .titulo {
@@ -521,7 +519,7 @@ textarea {
     width: 100%;
     margin-top: 24px;
     display: flex;
-    color: var(--black-3);
+    color: var(--gray3);
     justify-content: center;
     align-items: space-evenly;
     gap: 1rem;
@@ -568,10 +566,6 @@ textarea {
 }
 
 @media screen and (max-width: 900px) {
-    .mockup {
-        width: 50%;
-        height: auto;
-    }
 
     .titulo {
         font-size: 50px;
@@ -742,8 +736,7 @@ textarea {
 
 @media screen and (max-width: 500px) {
     .mockup {
-        width: 80%;
-        margin-bottom: 15px;
+        width: 100%;
     }
 
     .card {
